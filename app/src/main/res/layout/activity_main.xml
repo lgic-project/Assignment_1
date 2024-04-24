@@ -1,134 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/my_primary"
     tools:context=".MainActivity">
 
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/my_primary"
-        android:alpha="0.7" />
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_above="@id/card_view"
-        android:padding="28dp">
-
-
-    </LinearLayout>
-
-
-    <androidx.cardview.widget.CardView
+    <!-- Search Box -->
+    <EditText
+        android:id="@+id/search_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Search..."
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:padding="8dp"
+        android:background="@drawable/edittext_border"
+        android:textColor="@android:color/black" />
+
+    <!-- Orange Gap between Search Box and Offers Section -->
+    <View
+        android:id="@+id/orange_gap_search_offers"
+        android:layout_below="@id/search_box"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/my_primary" /> <!-- Orange color -->
+
+    <!-- Offers Section -->
+    <TextView
+        android:id="@+id/offers_header"
+        android:layout_below="@id/orange_gap_search_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Offers"
+        android:textSize="20sp"
+        android:textColor="@android:color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/offers_recyclerview"
+        android:layout_below="@id/offers_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Gap between offers and categories using primary color -->
+    <View
+        android:id="@+id/gap_offers_categories"
+        android:layout_below="@id/offers_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/my_primary" />
+
+    <!-- Categories Section -->
+    <TextView
+        android:id="@+id/categories_header"
+        android:layout_below="@id/gap_offers_categories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Categories"
+        android:textSize="20sp"
+        android:textColor="@android:color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categories_recyclerview"
+        android:layout_below="@id/categories_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Bottom Navigation -->
+    <include
+
         android:layout_alignParentBottom="true"
-        app:cardCornerRadius="28dp"
-        android:layout_marginBottom="-20dp"
-        android:id="@+id/card_view">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="28dp">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sign Up"
-                android:textColor="@color/my_primary"
-                android:textSize="32sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Create a new account"
-                android:alpha="0.7" />
-
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="30dp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name"
-                android:alpha="0.7"
-                android:textStyle="bold" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your name" />
-
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone Number"
-                android:alpha="0.7"
-                android:textStyle="bold" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                android:hint="Enter your phone number" />
-
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp" />
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Password"
-                android:alpha="0.7"
-                android:textStyle="bold" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:drawableEnd="@drawable/password_icon" />
-
-
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="20dp" />
-
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="10dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:text="Sign Up"
-                app:cornerRadius="32dp" />
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 </RelativeLayout>

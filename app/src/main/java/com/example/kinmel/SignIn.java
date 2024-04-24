@@ -6,22 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainLogin extends Activity {
+public class SignIn extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_main);
+        setContentView(R.layout.signin);
 
-        Button signupButton = findViewById(R.id.signupButton);
-        signupButton.setOnClickListener(new View.OnClickListener() {
+        Button signUpButton = findViewById(R.id.signUpButton);
+        signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainLogin.this, MainActivity.class);
+                // Navigate to SignUp page
+                Intent intent = new Intent(SignIn.this, SignUp.class);
                 startActivity(intent);
             }
         });
-
-        // Add any other login page logic you have here
     }
 }
