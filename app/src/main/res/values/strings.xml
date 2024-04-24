@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KinMel</string>
+    <!-- Payment Methods -->
+    <string-array name="payment_methods">
+        <item>eSewa</item>
+        <item>PayPal</item>
+        <item>Bank Transfer</item>
+        <!-- Add more payment methods as needed -->
+    </string-array>
+</resources>
